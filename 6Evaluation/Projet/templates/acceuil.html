@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Quel film ?  </title>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" >
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/acceuil.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/films_acceuil.css') }}">
+        <link rel = "icon" href = "/static/favicon.png" type = "image/x-icon"> 
+        <meta charset= 'utf-8'>
+    </head>
+
+    <body>
+        <header>
+            <div class="bouton_principal">
+                <a href='/'><img src="/static/logo.png" alt="logo" srcset="" width=100 height=100></a>
+            </div>
+            
+               
+            
+        </header>
+
+        <main>
+            <div class="menu">
+                Type film
+                <form method="post" action="/" >
+                    <select name = "type_film" id="tf">
+                        <option value="Rien">Veuillez sélectionner</option>
+                        {% for type in type_film %}
+                            <option value={{type}}>{{type}}</option>
+                        {% endfor %}
+                    </select>
+                    
+                    <center><button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button></center>
+                </form>
+
+
+            </div>  
+            
+            <div class="contenu">
+                <div class="film_alea">
+                    <div class="poster_film">
+                        <a href="/fiche_film/{{film['nom_film_attache']}}"><img src="{{film['nom_fichier_image']}}.jpg" alt="Poster"></a>
+                    </div>
+                    <div class="details_film">
+                        <B>{{film['nom_film']}}</B> <br>
+                        {{film['theme_production']}} <br>
+
+                        {{film['duree_film']}} <br>
+                        {{film['note_moyenne']}}/10 <br>
+
+                        {% for c in film['etoiles'][0] %}
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                        {% endfor %}
+
+                        {% if film['etoiles'][1] == 1 %}
+                            <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                            {%  for c in film['etoiles'][2] %}
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            {% endfor %}
+                        {% endif %}
+                                    
+                            {% if film['etoiles'][1] == 0 %}
+                                {%  for c in film['etoiles'][2] %}
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                {% endfor %}
+                            {% endif %}      
+                    </div>
+                </div>
+
+                <div class="liste_1">
+                    <a style="text-decoration:none" href='/{{liste_1[1]}}'><h2>{{liste_1[0]}}</h2>  </a>
+                    <table>
+                        <tr>
+                            {% for film in liste_1_short %}
+                                <td>
+                                    <div class="poster">
+                                        <a href="/fiche_film/{{film['nom_film_attache']}}"><img src="{{film['nom_fichier_image']}}.jpg" alt="Poster" width="137" height="201"></a>
+                                    </div>
+                                    
+                                    <div class="title">
+                                        <center><B>{{film['nom_film']}}</B><br></center>
+                                        
+                                    </div>
+                                </td>
+                                
+                            {% endfor %}
+                        </tr>
+                        
+                    </table>
+                    
+                </div>
+
+                <div class="liste_2">
+                    <a style="text-decoration:none" href='/{{liste_2[1]}}'><h2>{{liste_2[0]}}</h2>  </a>
+                    <table>
+                        <tr>
+                            {% for film in liste_2_short %}
+                                <td>
+                                    <div class="poster">
+                                        <a href="/fiche_film/{{film['nom_film_attache']}}"><img src="{{film['nom_fichier_image']}}.jpg" alt="Poster" width="137" height="201"></a>
+                                    </div>
+                                    
+                                    <div class="title">
+                                        <center><B>{{film['nom_film']}}</B><br></center>
+                                        
+                                    </div>
+                                </td>
+                                
+                            {% endfor %}
+                        </tr>
+                        
+                    </table>
+                    
+                </div>
+
+                <div class="liste_3">
+                    <a style="text-decoration:none" href='/{{liste_3[1]}}'><h2>{{liste_3[0]}}</h2>  </a>
+                    <table>
+                        <tr>
+                            {% for film in liste_3_short %}
+                                <td>
+                                    <div class="poster">
+                                        <a href="/fiche_film/{{film['nom_film_attache']}}"><img src="{{film['nom_fichier_image']}}.jpg" alt="Poster" width="137" height="201"></a>
+                                    </div>
+                                    
+                                    <div class="title">
+                                        <center><B>{{film['nom_film']}}</B><br></center>
+                                        
+                                    </div>
+                                </td>
+                                
+                            {% endfor %}
+                        </tr>
+                        
+                    </table>
+                    
+                </div>
+
+                
+                
+                
+                
+            </div>
+            
+        </main>
+        
+        <footer>
+            Copyright Ashkar et Nadjime 2021
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> {{name_film}} - Quel film ?  </title>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" >
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/acceuil.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/fiche_film.css') }}">
+        
+        <link rel = "icon" href = "/static/favicon.png" type = "image/x-icon"> 
+        <meta charset= 'utf-8'>
+    </head>
+
+    <body>
+        <header>
+            <div class="bouton_principal">
+                <a href='/'><img src="/static/logo.png" alt="logo" srcset="" width=100 height=100></a>
+            </div>
+            
+               
+            
+        </header>
+
+        <main>
+            <div class="menu">
+
+                <form method="post" action="/" >
+                    <select name = "type_film" id="tf">
+                        <option value="Rien">Veuillez sélectionner</option>
+                        {% for type in type_film_2 %}
+                            <option value={{type}}>{{type}}</option>
+                        {% endfor %}
+                    </select>
+                    <center><button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button></center>
+                </form>
+            </div>  
+            
+            <div class="contenu">
+                <div class="fiche_film">
+                    <div class="titre_film">
+                        <h2>{{name_film}}</h2>
+                    </div>
+                    
+                    
+    
+                    <div class="poster_film">
+                        <img src="{{image}}.jpg" alt="Poster" width="182" height="268">
+                    </div>
+                    
+                    
+                    <div class="synopsis_film">
+                        <p>
+                            {{resume}}
+                        </p>
+                    </div>
+                    
+                    <div class="notes_film">
+                        <table>
+                            <tr>
+                                <td><B>SENSCRITIQUE</B></td> 
+                                <td><B>IMDB</B></td>
+                                <td><B>METACRITIC</B></td>
+                            </tr>
+                            <tr>
+                                <td>{{note_sens_critique}}</td>
+                                <td>{{note_IMDB}}</td>
+                                <td>{{note_META}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div class="autres_details">
+                        <B>REALISATEUR</B> : {{realisateur}}<br>
+                        <B>DUREE FILM</B> : {{duree}} <br>
+                        <B>DATE DE SORTIE</B> : {{date_sortie}} <br>
+                        <B>TYPE FILM</B> : {{type_film}} <br>
+                        <B>BUDGET</B> : {{budget}} $<br> 
+                        <B>BOX OFFICE MONDIAL</B> : {{box_office}} $ <br>
+                        <B>PAYS DE TOURNAGE</B> : {{location}} <br>
+                        <B>ACTEURS PRINCIPAUX</B> : {% for act in acteurs_principaux %} {{act}}, {% endfor %}
+                    </div>
+
+                    <div class="notes">
+                        <center>{{moyenne_note}}/10</center>
+                        {% for c in notes[0] %}
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                        {% endfor %}
+
+                        {% if notes[1] == 1 %}
+                                <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                                {%  for c in notes[2] %}
+                                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                                {% endfor %}
+                        {% endif %}
+                                
+                        {% if notes[1] == 0 %}
+                            {%  for c in notes[2] %}
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            {% endfor %}
+                        {% endif %}      
+                    </div>
+                </div>
+                
+                    
+
+            </div>
+            
+        </main>
+        
+        <footer>
+            Copyright Ashkar et Nadjime 2021
+        </footer>
+    </body>
+</html>

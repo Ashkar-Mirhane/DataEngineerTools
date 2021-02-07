@@ -12,7 +12,8 @@ Et puis en comparant les différentes notes des différents sites de pouvoir dre
 
 ### Le Lancement du dashboard ###
 
-Le lancement du dashboard se fait avec l'instruction : **python main.py**.
+Le lancement du dashboard se fait avec l'instruction : **python main.py**.\
+(Parfois la page d'acceuil ne marche pas, il faut juste l'actualiser et le dashboard remarche, une erreur que nous n'avons pas réussi à résoudre et que nous ne comprenons pas)
 
 ### Description du dashboard ###
 

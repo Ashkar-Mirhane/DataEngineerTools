@@ -15,3 +15,6 @@ Et puis en comparant les différentes notes des différents sites de pouvoir dre
 Le lancement du dashboard se fait avec l'instruction : **python main.py**.
 
 ### Description du dashboard ###
+
+Au lancement du dashboard, l'utilisateur se retrouve face à une page où au 1er plan il y a une fiche d'un film, un film aléatoire de la base de donnée. \
+Juste en dessous il pourra observer différentes partie de liste de films, en cliquant sur le nom de la liste, l'utilisateur aura accès à la liste complète. \

@@ -1,0 +1,83 @@
+.contenu .poster_film{
+    text-align: center;
+}
+
+.contenu .details_film{
+    text-align: center;
+    top:-100px;
+}
+
+.liste_1 td{
+    position:relative;
+    width: 200px;
+    height: 300px;
+    border: 1px solid rgb(83, 154, 201);
+    
+    
+}
+
+
+.liste_1 td .poster{
+    position: relative;
+    text-align:center;
+    top:-20px;
+}
+
+
+.liste_1 td .title{
+    position: relative;
+    width:200px;
+    
+}
+
+
+
+
+.liste_2 td{
+    position:relative;
+    width: 200px;
+    height: 300px;
+    border: 1px solid rgb(83, 154, 201);
+    
+    
+}
+
+
+.liste_2 td .poster{
+    position: relative;
+    text-align:center;
+    top:-20px;
+}
+
+
+.liste_2 td .title{
+    position: relative;
+    width:200px;
+    
+}
+
+
+
+
+.liste_3 td{
+    position:relative;
+    width: 200px;
+    height: 300px;
+    border: 1px solid rgb(83, 154, 201);
+    
+    
+}
+
+
+.liste_3 td .poster{
+    position: relative;
+    text-align:center;
+    top:-20px;
+}
+
+
+.liste_3 td .title{
+    position: relative;
+    width:200px;
+    
+}

@@ -1,0 +1,29 @@
+.liste td{
+    margin: 8px;
+}
+
+.liste td .fiche{
+    width:800px;
+    height: 350px;
+    border: 1px solid rgb(83, 154, 201);
+}
+
+.liste td .fiche .title{
+    text-align:center;
+}
+
+.liste td .fiche .type{
+    margin-left:370px;
+    margin-top:-200px;
+    
+}
+
+.liste td .fiche .type td{
+    text-align: center;
+    width: 150px;
+  }
+
+  .liste td .fiche .notes{
+    text-align:center;
+    margin-top:20px;
+}

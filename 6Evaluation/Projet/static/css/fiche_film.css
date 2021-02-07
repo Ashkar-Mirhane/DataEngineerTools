@@ -1,0 +1,45 @@
+.fiche_film{
+    position:absolute;
+    width :900px;
+    height: 500px;
+    
+    
+}
+.titre_film{
+    text-align:center;
+    margin-top:-20px;
+}
+.poster_film{
+    position:absolute;
+    top:30px;
+}
+
+.synopsis_film{
+    position:absolute;
+    text-align:justify;
+    margin-left:200px;
+    
+}
+
+.notes_film{
+    position: absolute;
+    margin-left:200px;
+    margin-top:200px;
+    
+}
+
+.notes_film td{
+    text-align: center;
+    width: 150px;
+  }
+
+.autres_details{
+    position:absolute;
+    margin-top:260px;
+}
+
+.notes{
+    position: absolute;
+    margin-top:425px;
+    margin-left:50%;
+}
